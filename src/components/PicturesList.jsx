@@ -4,15 +4,17 @@ import Visualiser from "./Visualiser";
 import * as api from "../api";
 
 class PicturesList extends Component {
+
   componentDidMount() {
     this.getGalleryData();
   }
 
   render() {
+   
     return (
+      
       <section>
         <Visualiser />
-
         <ul>
           <li>
             <p>Picture heading</p>

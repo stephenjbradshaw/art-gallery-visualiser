@@ -3,7 +3,7 @@ import React from "react";
 const Visualiser = () => {
   return (
     <div>
-      <p>visualiser here</p>
+      <p id={"visualiser"}>Visualiser here</p>
     </div>
   );
 };

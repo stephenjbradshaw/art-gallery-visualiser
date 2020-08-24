@@ -4,35 +4,32 @@ import Visualiser from "./Visualiser";
 import * as api from "../api";
 
 class PicturesList extends Component {
+  state = { artObjects: [], isLoading: true };
+
   componentDidMount() {
     this.getGalleryData();
   }
 
   render() {
+    const { isLoading, artObjects } = this.state;
+    if (isLoading) return <p id={"load"}>Loading...</p>;
     return (
       <section>
         <Visualiser />
         <ul>
-          <li>
-            <p>Picture heading</p>
-            <Picture />
-          </li>
-          <li>
-            <p>Picture heading</p>
-            <Picture />
-          </li>
-          <li>
-            <p>Picture heading</p>
-            <Picture />
-          </li>
+          {artObjects.map((artObject) => {
+            return <Picture key={artObject.objectNumber} {...artObject} />;
+          })}
         </ul>
       </section>
     );
   }
 
   getGalleryData() {
-    api.fetchGalleryData().then((data) => {
-      console.log(data, "data within pitcutreslist");
+    this.setState({ isLoading: true });
+    api.fetchGalleryData().then((artObjects) => {
+      this.setState({ artObjects, isLoading: false });
+      console.log(artObjects, "ART GALLERY DATA");
     });
   }
 }

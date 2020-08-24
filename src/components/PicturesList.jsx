@@ -4,15 +4,12 @@ import Visualiser from "./Visualiser";
 import * as api from "../api";
 
 class PicturesList extends Component {
-
   componentDidMount() {
     this.getGalleryData();
   }
 
   render() {
-   
     return (
-      
       <section>
         <Visualiser />
         <ul>
@@ -34,7 +31,9 @@ class PicturesList extends Component {
   }
 
   getGalleryData() {
-    api.fetchGalleryData();
+    api.fetchGalleryData().then((data) => {
+      console.log(data, "data within pitcutreslist");
+    });
   }
 }
 

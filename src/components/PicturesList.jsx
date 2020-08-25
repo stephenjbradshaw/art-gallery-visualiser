@@ -15,10 +15,12 @@ class PicturesList extends Component {
     if (isLoading) return <p id={"load"}>Loading...</p>;
     return (
       <section>
-        <Visualiser />
         <ul>
           {artObjects.map((artObject) => {
-            return <Picture key={artObject.objectNumber} {...artObject} />;
+            return <div>
+              <Picture key={artObject.objectNumber} {...artObject} />
+              <Visualiser key={artObject.objectNumber + "artColor" } {...artObject}/>
+            </div> 
           })}
         </ul>
       </section>

@@ -12,7 +12,6 @@ const Visualiser = (props) => {
           hoverBackgroundColor: [],
         },
       ],
-
     };
     colors.forEach((color) => {
       data.datasets[0].data.push(color.percentage);
@@ -25,18 +24,18 @@ const Visualiser = (props) => {
   const colors = props.colors;
 
   const processedColors = processColors(colors);
-  const options =  {
-        legend: {
-            labels: {
-                // This more specific font property overrides the global property
-                fontColor: 'white',
-                fontSize: 18,
-            }
-        }
-    }
- console.log(processedColors)
+  const options = {
+    legend: {
+      labels: {
+        // This more specific font property overrides the global property
+        fontColor: "white",
+        fontSize: 18,
+      },
+    },
+  };
+  console.log(processedColors);
   return (
-    <div>
+    <div className="chart">
       <Doughnut data={processedColors} options={options} />
     </div>
   );

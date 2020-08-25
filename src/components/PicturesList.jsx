@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Picture from "./Picture";
 import Visualiser from "./Visualiser";
+import PictureInfo from "./PictureInfo";
 import * as api from "../api";
 
 class PicturesList extends Component {
@@ -17,10 +18,18 @@ class PicturesList extends Component {
       <section>
         <ul>
           {artObjects.map((artObject) => {
-            return <div>
-              <Picture key={artObject.objectNumber} {...artObject} />
-              <Visualiser key={artObject.objectNumber + "artColor" } {...artObject}/>
-            </div> 
+            return (
+              <li>
+                <PictureInfo key={artObject.objectNumber} {...artObject} />
+                <section className="pictureAndChart">
+                  <Picture key={artObject.objectNumber} {...artObject} />
+                  <Visualiser
+                    key={artObject.objectNumber + "artColor"}
+                    {...artObject}
+                  />
+                </section>
+              </li>
+            );
           })}
         </ul>
       </section>

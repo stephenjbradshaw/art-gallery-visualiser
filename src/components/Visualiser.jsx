@@ -26,6 +26,7 @@ const Visualiser = (props) => {
   const processedColors = processColors(colors);
   const options = {
     legend: {
+      display: false,
       labels: {
         // This more specific font property overrides the global property
         fontColor: "white",

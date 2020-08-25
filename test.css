@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-top: 100px;
+}
+
+img {
+  width: 75%;
+}
+
+.pictureInfo {
+  margin-top: 20rem;
+  margin-bottom: 2rem;
+}
+
+.pictureAndChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture {
+  margin: 4rem 0;
+}
+
+.chart {
+  max-width: 75%;
+}
+
+h2 {
+  max-width: 750px;
+  margin: auto;
+}
+
+p {
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+#load {
+  margin: auto;
+  margin-top: 50px;
+}
+
+#title {
+  font-size: 50pt;
+}

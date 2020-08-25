@@ -14,6 +14,7 @@ img {
 }
 
 .pictureInfo {
+  margin-bottom: 2rem;
 }
 
 .pictureAndChart {
@@ -23,9 +24,11 @@ img {
 }
 
 .picture {
+  margin: 4rem 0;
 }
 
 .chart {
+  max-width: 75%;
 }
 
 h2 {
